@@ -1,0 +1,7 @@
+To create a dataset use `capture.py` script. Xbox controller is needed.
+
+RB - pause/unpause capture
+Y button - kills the script
+
+I recommend to change the inputs library code for better performance if you have stuttering:
+https://github.com/zeth/inputs/issues/65#issuecomment-486036591
