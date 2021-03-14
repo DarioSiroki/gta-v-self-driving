@@ -4,7 +4,6 @@ import cv2
 import time
 from utils.gamepad import Gamepad
 import os
-import sys
 
 # init gamepad
 gp = Gamepad()
