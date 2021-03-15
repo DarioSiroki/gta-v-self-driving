@@ -5,14 +5,14 @@ import time
 from utils.gamepad import Gamepad
 import os
 
-# init gamepad
+# Initialize gamepad
 gp = Gamepad()
 
-# open output file
+# Create output dir if it doesn't exist
 if not os.path.isdir("data"):
     os.mkdir("data")
 
-# training data will be appended here
+# Training data will be appended here
 training_data = []
 
 print("Press RB to pause/unpause. Currently paused.")
