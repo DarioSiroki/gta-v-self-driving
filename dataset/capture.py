@@ -23,6 +23,7 @@ print("Press RB to unpause")
 
 while(True):
     if gp.pause_main_loop:
+        time.sleep(0.1)
         continue
     # FPS counter
     time_passed = time.time() - last_time
