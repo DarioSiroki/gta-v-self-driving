@@ -25,6 +25,7 @@ class Gamepad:
                 elif event.code == "BTN_TR":
                     if event.state == 1:
                         self.pause_main_loop = not self.pause_main_loop
+                        print("Paused: ", self.pause_main_loop)
                 elif event.code == "BTN_NORTH":
                     self.exit_main_loop = True
 

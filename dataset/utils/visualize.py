@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-f = np.load("../data/14-03-21 21-19.npy", allow_pickle=True)
+f = np.load("../data/1615768087.npy", allow_pickle=True)
 
 print("training data length: ", len(f))
 for item in f:

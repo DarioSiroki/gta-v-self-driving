@@ -8,10 +8,6 @@ import os
 # init gamepad
 gp = Gamepad()
 
-# fps counter stuff
-last_time = time.time()
-fps = 0
-
 # open output file
 if not os.path.isdir("data"):
     os.mkdir("data")
@@ -19,21 +15,12 @@ if not os.path.isdir("data"):
 # training data will be appended here
 training_data = []
 
-print("Press RB to unpause")
+print("Press RB to pause/unpause. Currently paused.")
 
 while(True):
     if gp.pause_main_loop:
         time.sleep(0.1)
         continue
-    # FPS counter
-    time_passed = time.time() - last_time
-    if time_passed >= 1:
-        print("FPS", fps, end="\r", flush=True)
-        fps = 0
-        last_time = time.time()
-    else:
-        fps += 1
-
     # Grab image and resize it
     screen = np.array(ImageGrab.grab(bbox=(0, 40, 1920, 1080)))
     screen = cv2.resize(screen, (480, 270))
@@ -49,7 +36,7 @@ while(True):
     # Save data every 500 iters
     if len(training_data) == 500:
         with open(f"data/{round(time.time())}.npy", 'ab') as output:
-            print("saving data")
+            print(f"{time.strftime('%H:%M:%S')} Saving data")
             np.save(output, training_data)
             training_data = []
 
