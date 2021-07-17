@@ -1,2 +1,5 @@
 dataset/**/*.npy
 __pycache__
+driver/*.pt
+venv
+.vscode
