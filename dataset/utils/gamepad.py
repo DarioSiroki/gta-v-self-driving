@@ -31,3 +31,8 @@ class Gamepad:
 
     def kill(self):
         self.run = False
+
+if __name__ == "__main__":
+    gamepad = Gamepad()
+    while True:
+        print(gamepad.steering_angle, gamepad.brake, gamepad.throttle)
