@@ -4,25 +4,27 @@ import cv2
 import time
 from utils.gamepad import Gamepad
 import os
+import time 
+
+OUTPUT_DIR = "raw_data"
 
 # Initialize gamepad
 gp = Gamepad()
 
 # Create output dir if it doesn't exist
-if not os.path.isdir("data"):
-    os.mkdir("data")
+if not os.path.isdir(OUTPUT_DIR):
+    os.mkdir(OUTPUT_DIR)
 
 # Training data will be appended here
 training_data = []
 
 print("Press RB to pause/unpause. Currently paused.")
-
-while(True):
+while True:
     if gp.pause_main_loop:
         time.sleep(0.1)
         continue
     # Grab image and resize it
-    screen = np.array(ImageGrab.grab(bbox=(0, 40, 1920, 1080)))
+    screen = np.array(ImageGrab.grab(bbox=(0, 26, 1920, 1106)))
     screen = cv2.resize(screen, (480, 270))
 
     # Append screen and gamepad feedback to training data
@@ -35,7 +37,7 @@ while(True):
 
     # Save data every 500 iters
     if len(training_data) == 500:
-        with open(f"data/{round(time.time())}.npy", 'ab') as output:
+        with open(f"{OUTPUT_DIR}/{round(time.time())}.npy", 'ab') as output:
             print(f"{time.strftime('%H:%M:%S')} Saving data")
             np.save(output, training_data)
             training_data = []
