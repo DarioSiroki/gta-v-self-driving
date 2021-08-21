@@ -1,6 +1,8 @@
 dataset/**/*.npy
+dataset/**/*.h5
 __pycache__
 driver/*.pt
 venv
 .vscode
 train/models
+train/logs
