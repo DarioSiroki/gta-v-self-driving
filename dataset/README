@@ -1,7 +1,13 @@
-To create a dataset use `capture.py` script. Xbox controller is needed.
+To save gameplay data use `capture.py` script. Xbox controller is needed.
 
 RB - pause/unpause capture
-Y button - kills the script
+Y button - kills the script (script has to be paused)
 
 I recommend to change the inputs library code for better performance if you have stuttering:
 https://github.com/zeth/inputs/issues/65#issuecomment-486036591
+
+To create a dataset:
+1. run data processing
+2. run data balancing
+
+Check extra_data.py if you would like to download the dataset. 
