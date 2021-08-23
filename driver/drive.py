@@ -9,7 +9,6 @@ import win32api as wapi
 import time
 from pymem import Pymem
 import yolo
-is_eights = False
 
 MODEL_PATH = "./model.h5"
 FPS_COUNTER = FpsCounter()
