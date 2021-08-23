@@ -11,7 +11,7 @@ from pymem import Pymem
 import yolo
 is_eights = False
 
-MODEL_PATH = path.join("..", "train", "models", "plss.h5")
+MODEL_PATH = "./model.h5"
 FPS_COUNTER = FpsCounter()
 GAMEPAD = pyxinput.vController(True)
 pm = Pymem('GTA5.exe')
